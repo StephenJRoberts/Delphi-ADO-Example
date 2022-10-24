@@ -99,7 +99,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="crm_u.pas">
-            <Form>fCRM</Form>
+            <Form>fCRUD</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="dmEntries_u.pas">

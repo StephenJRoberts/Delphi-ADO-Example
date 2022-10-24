@@ -1,9 +1,9 @@
-object fCRM: TfCRM
+object fCRUD: TfCRUD
   Left = 0
   Top = 0
   Caption = 'Entries'
-  ClientHeight = 441
-  ClientWidth = 600
+  ClientHeight = 440
+  ClientWidth = 596
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

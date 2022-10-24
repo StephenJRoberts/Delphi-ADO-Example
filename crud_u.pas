@@ -1,4 +1,4 @@
-unit crm_u;
+unit crud_u;
 
 interface
 
@@ -9,7 +9,7 @@ uses
 
 type
 idList = array [0..100] of integer;
-  TfCRM = class(TForm)
+  TfCRUD = class(TForm)
     panData: TPanel;
     lEntries: TLabel;
     lbEntries: TListBox;
@@ -31,18 +31,18 @@ idList = array [0..100] of integer;
   end;
 
 var
-  fCRM: TfCRM;
+  fCRUD: TfCRUD;
 
 implementation
 
 {$R *.dfm}
 
-procedure TfCRM.bCreateEntryClick(Sender: TObject);
+procedure TfCRUD.bCreateEntryClick(Sender: TObject);
 begin
   fCreateEntry.ShowModal;
 end;
 
-procedure TfCRM.bDeleteEntryClick(Sender: TObject);
+procedure TfCRUD.bDeleteEntryClick(Sender: TObject);
 var
   iSelectedID:integer;
 begin
@@ -61,7 +61,7 @@ begin
     end;
 end;
 
-procedure TfCRM.bRefreshClick(Sender: TObject);
+procedure TfCRUD.bRefreshClick(Sender: TObject);
 var sFirstName, sLastName:string;
 iID, i : integer;
 begin
@@ -81,7 +81,7 @@ with dmEntries do
   end;
 end;
 
-procedure TfCRM.bUpdateEntryClick(Sender: TObject);
+procedure TfCRUD.bUpdateEntryClick(Sender: TObject);
 var
   iSelectedID:integer;
 begin
@@ -90,7 +90,7 @@ begin
   fEditForm.ShowModal;
 end;
 
-procedure TfCRM.FormShow(Sender: TObject);
+procedure TfCRUD.FormShow(Sender: TObject);
 var sFirstName, sLastName:string;
 iID, i : integer;
 begin
