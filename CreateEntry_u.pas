@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
-  Vcl.WinXCalendars, Vcl.ComCtrls, dmEntries_u;
+  Vcl.WinXCalendars, Vcl.ComCtrls, dmEntries_u,DateUtils;
 
 type
   TfCreateEntry = class(TForm)
@@ -20,7 +20,7 @@ type
     lError: TLabel;
     procedure bSubmitClick(Sender: TObject);
     procedure SetError(sError:string);
-    procedure SaveEntry(sFirstName, sLastName:string; dDOB:TDate);
+    procedure SaveEntry(sFirstName, sLastName:string; dDOB:TDate; Sender: TObject);
   private
     { Private declarations }
   public
@@ -31,6 +31,7 @@ var
   fCreateEntry: TfCreateEntry;
 
 implementation
+uses crud_u;
 
 {$R *.dfm}
 
@@ -40,10 +41,11 @@ dDOB:TDate;
 begin
 lError.Visible:=false;
 dDOB:=dtpDOB.DateTime;
+dDOB := RecodeTime(dDOB, 0, 0, 0, 0);
 if eFirstName.Text <> '' then
         if eLastName.Text <> '' then
         begin
-             SaveEntry(eFirstName.Text, eLastName.Text, dDOB);
+             SaveEntry(eFirstName.Text, eLastName.Text, dDOB,Sender);
         end
         else
           SetError('Please enter a Last Name.')
@@ -51,7 +53,8 @@ if eFirstName.Text <> '' then
          SetError('Please enter a First Name.')
 end;
 
-procedure TfCreateEntry.SaveEntry(sFirstName, sLastName: string; dDOB: TDate);
+//
+procedure TfCreateEntry.SaveEntry(sFirstName, sLastName: string; dDOB: TDate;Sender: TObject);
 begin
 with dmEntries do
   begin
@@ -61,6 +64,7 @@ with dmEntries do
   tblEntries['DateOfBirth']:= dDOB;
   tblEntries.Post;
   end;
+  fCRUD.bRefreshClick(Sender);
   fCreateEntry.close;
 end;
 

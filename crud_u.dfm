@@ -2,8 +2,8 @@ object fCRUD: TfCRUD
   Left = 0
   Top = 0
   Caption = 'Entries'
-  ClientHeight = 440
-  ClientWidth = 596
+  ClientHeight = 441
+  ClientWidth = 600
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -41,7 +41,13 @@ object fCRUD: TfCRUD
       Top = 29
       Width = 345
       Height = 388
-      ItemHeight = 15
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ItemHeight = 20
+      ParentFont = False
       TabOrder = 0
     end
   end

@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, dmEntries_u,
-  Data.DB, Vcl.Grids, Vcl.DBGrids, CreateEntry_u, edit_u;
+  Data.DB, Vcl.Grids, Vcl.DBGrids, CreateEntry_u, edit_u, Vcl.ComCtrls;
 
 type
 idList = array [0..100] of integer;
@@ -64,6 +64,7 @@ end;
 procedure TfCRUD.bRefreshClick(Sender: TObject);
 var sFirstName, sLastName:string;
 iID, i : integer;
+dtDOB:TDate;
 begin
 dmEntries.tblEntries.First;
 lbEntries.Items.Clear;
@@ -75,7 +76,8 @@ with dmEntries do
       idArray[i]:= iID;
       sFirstName := tblEntries['FirstName'];
       sLastName := tblEntries['LastName'];
-      lbEntries.Items.Add( sFirstName + ' ' + sLastName );
+      dtDOB := tblEntries['DateOfBirth'];
+      lbEntries.Items.Add(DateToStr(dtDOB) + ' - ' + sFirstName + ' ' + sLastName );
       tblEntries.Next;
       Inc(i);
   end;
@@ -93,6 +95,7 @@ end;
 procedure TfCRUD.FormShow(Sender: TObject);
 var sFirstName, sLastName:string;
 iID, i : integer;
+dtDOB:TDate;
 begin
 dmEntries.tblEntries.First;
 i:= 0;
@@ -103,7 +106,8 @@ with dmEntries do
       idArray[i]:= iID;
       sFirstName := tblEntries['FirstName'];
       sLastName := tblEntries['LastName'];
-      lbEntries.Items.Add( sFirstName + ' ' + sLastName );
+      dtDOB := tblEntries['DateOfBirth'];
+      lbEntries.Items.Add(DateToStr(dtDOB) + ' - ' + sFirstName + ' ' + sLastName);
       tblEntries.Next;
       Inc(i);
   end;
