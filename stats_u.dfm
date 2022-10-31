@@ -56,6 +56,12 @@ object frmStats: TfrmStats
       Width = 131
       Height = 15
       Caption = 'Oldest Person in Table 1: '
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object lblOldest2: TLabel
       Left = 16
@@ -63,6 +69,12 @@ object frmStats: TfrmStats
       Width = 131
       Height = 15
       Caption = 'Oldest Person in Table 2: '
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object cboSelect: TComboBox
       Left = 16
