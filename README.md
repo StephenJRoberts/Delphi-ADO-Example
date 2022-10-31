@@ -1,2 +1,2 @@
-# Delphi CRD Example
- Delphi CRD Example Application
+# Delphi ADO Application Example
+ Delphi ADO Example Application
