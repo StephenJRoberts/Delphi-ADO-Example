@@ -99,7 +99,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="crud_u.pas">
-            <Form>fCRUD</Form>
+            <Form>frmMain</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="dmEntries_u.pas">
@@ -108,11 +108,15 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="CreateEntry_u.pas">
-            <Form>fCreateEntry</Form>
+            <Form>frmCreateEntry</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="edit_u.pas">
             <Form>fEditForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="stats_u.pas">
+            <Form>frmStats</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
@@ -970,6 +974,7 @@
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">False</Platform>
             </Platforms>
+            <ModelSupport>False</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

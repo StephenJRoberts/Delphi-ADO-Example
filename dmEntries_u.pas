@@ -10,6 +10,13 @@ type
     conEntriesDatabase: TADOConnection;
     tblEntries: TADOTable;
     dsEntries: TDataSource;
+    qryCount: TADOQuery;
+    qryCounttotal: TIntegerField;
+    qryOldest: TADOQuery;
+    qryOldestID: TAutoIncField;
+    qryOldestFirstName: TWideStringField;
+    qryOldestLastName: TWideStringField;
+    qryOldestDateOfBirth: TDateTimeField;
   private
     { Private declarations }
   public

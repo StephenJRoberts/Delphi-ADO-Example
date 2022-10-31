@@ -34,11 +34,12 @@ var
   fEditForm: TfEditForm;
 
 implementation
-
+uses crud_u;
 {$R *.dfm}
 
 { TfEditForm }
 
+{ Update Button OnClick Event }
 procedure TfEditForm.bUpdateClick(Sender: TObject);
 var
 dDOB:TDate;
@@ -55,6 +56,7 @@ begin
      else SetError('Please enter a First Name.')
 end;
 
+{ constructor to load data for the edit page }
 constructor TfEditForm.Create(AOwner: TComponent; const iID: integer);
 var
 dDOB:TDate;
@@ -80,6 +82,7 @@ begin
     end;
 end;
 
+{ Save/Update existing entry }
 procedure TfEditForm.SaveEntry(sFirstName, sLastName: string; dDOB: TDate);
 begin
 with dmEntries do
@@ -93,9 +96,11 @@ with dmEntries do
       tblEntries.Post;
     end;
   end;
+  frmMain.RefreshData;
   fEditForm.close;
 end;
 
+{ Error Prompt }
 procedure TfEditForm.SetError(sError: string);
 begin
   lError.Visible:=true;

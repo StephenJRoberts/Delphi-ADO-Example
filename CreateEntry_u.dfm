@@ -1,4 +1,4 @@
-object fCreateEntry: TfCreateEntry
+object frmCreateEntry: TfrmCreateEntry
   Left = 0
   Top = 0
   Caption = 'Create Entry'
@@ -11,7 +11,7 @@ object fCreateEntry: TfCreateEntry
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object panCreateEntry: TPanel
+  object pnlCreateEntry: TPanel
     Left = 8
     Top = 8
     Width = 313
@@ -72,7 +72,7 @@ object fCreateEntry: TfCreateEntry
       ParentFont = False
       Visible = False
     end
-    object eFirstName: TEdit
+    object edtFirstName: TEdit
       Left = 136
       Top = 59
       Width = 121
@@ -86,7 +86,7 @@ object fCreateEntry: TfCreateEntry
       TabOrder = 0
       TextHint = 'First Name'
     end
-    object eLastName: TEdit
+    object edtLastName: TEdit
       Left = 135
       Top = 93
       Width = 121
@@ -109,14 +109,14 @@ object fCreateEntry: TfCreateEntry
       Time = 0.483991331020661200
       TabOrder = 2
     end
-    object bSubmit: TButton
+    object btnSubmit: TButton
       Left = 87
       Top = 200
       Width = 138
       Height = 41
       Caption = 'Submit'
       TabOrder = 3
-      OnClick = bSubmitClick
+      OnClick = btnSubmitClick
     end
   end
 end
